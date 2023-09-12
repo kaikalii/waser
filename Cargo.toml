@@ -1,0 +1,18 @@
+[package]
+edition = "2021"
+name = "waser"
+version = "0.1.0"
+
+[dependencies]
+thiserror.optional = true
+thiserror.version = "1"
+wasmer.features = ["sys", "cranelift"]
+wasmer.optional = true
+wasmer.version = "4"
+
+[features]
+client = ["thiserror", "wasmer"]
+server = []
+
+[workspace]
+members = ["example_client", "example_server"]
